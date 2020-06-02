@@ -58,7 +58,7 @@ Remove o cabeçalho de uma string codificada em Base64:
 ``` javascript
 import { formatBase64 } from 'mime-uploader'
 
-var base64 = 'dGVzdGUtdXBsb2 .... FkLW1pbWU='
+var base64 = 'data:image/png;base64,dGVzdGUtdXBsb2 .... FkLW1pbWU='
 formatBase64(base64)
 
 ```
