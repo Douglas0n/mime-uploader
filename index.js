@@ -1,4 +1,3 @@
-var genericException = require('./Exception')
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const Blob = require('node-blob');
 const atob = require('atob');
@@ -14,7 +13,7 @@ exports.formatBase64String = function (base64) {
         base64Formated = base64.replace(/^data:image\/png;base64,/, "")
     }
     catch (error) {
-        throw { message:'formatBase64String fail', error: error }
+        throw { message: 'formatBase64String fail', error }
     }
     return base64Formated
 }
@@ -25,7 +24,7 @@ exports.formatBase64String = function (base64) {
  * @param   {string} base64 string codificada em Base64
  * @returns {ArrayBuffer} ArrayBuffer
  */
-exports.convertBase64ToArrayBuffer = function(base64) {
+exports.convertBase64ToArrayBuffer = function (base64) {
     try {
         var binary = atob(base64);
         var length = binary.length;
@@ -35,7 +34,7 @@ exports.convertBase64ToArrayBuffer = function(base64) {
         }
     }
     catch (error) {
-        throw { message: 'convertBase64ToArrayBuffer fail', error: error }
+        throw { message: 'convertBase64ToArrayBuffer fail', error }
     }
     return bytes.buffer;
 }
@@ -52,7 +51,7 @@ exports.convertBase64ToBuffer = function (base64) {
         return buffer
     }
     catch (error) {
-        throw { message: 'convertBase64ToBuffer fail', error: error }
+        throw { message: 'convertBase64ToBuffer fail', error }
     }
 }
 
@@ -89,8 +88,8 @@ exports.postMimeFromFormData = function (url, requestHeader, formData) {
         try {
 
             const request = new XMLHttpRequest()
-            if(requestHeader){
-                requestHeader.forEach(function(item){
+            if (requestHeader) {
+                requestHeader.forEach(function (item) {
                     request.setRequestHeader(item.name, item.value)
                 })
             }
@@ -104,7 +103,7 @@ exports.postMimeFromFormData = function (url, requestHeader, formData) {
 
         }
         catch (error) {
-            reject({ message: 'httpPostMimeFile fail', error})
+            reject({ message: 'httpPostMimeFile fail', error })
             throw new Error(error)
         }
     })
