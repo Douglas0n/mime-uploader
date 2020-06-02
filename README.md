@@ -10,7 +10,7 @@ Instale o pacote apartir do *npm* com o seguinte comando:
 $ npm install mime-uploader
 ```
 
-### Upload de arquivo codificado
+### Upload de um arquivo codificado
 
 Crie um objeto FormData apartir da string codificada em Base64 contendo o arquivo e faça o upload da seguinte forma:
 ``` javascript
