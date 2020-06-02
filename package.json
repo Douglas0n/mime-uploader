@@ -1,8 +1,9 @@
 {
   "name": "mime-uploader",
   "version": "1.0.0",
-  "description": "Simple Http mime uploader",
+  "description": "Funções simples para trabalhar com arquivos codificados em base64.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,11 +13,7 @@
     "upload",
     "base64"
   ],
-  "author": "Douglas Alves",
+  "author": "Douglas Alves <douglasalves395@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "atob": "^2.1.2",
-    "node-blob": "0.0.2",
-    "xmlhttprequest": "^1.8.0"
-  }
+  "dependencies": {}
 }
